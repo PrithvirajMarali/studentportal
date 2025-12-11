@@ -1,0 +1,35 @@
+create a folder in jupyter notebook(project) and go inside
+create requirement.txt and paste
+
+numpy==1.26.2
+pandas==2.2.2
+scikit-learn==1.3.2
+jupyterlab==4.1.0
+
+create ml_setup.ipynb and run
+!python3 -m venv venv
+!source venv/bin/activate
+!pip install -r requirements.txt
+!pip freeze | grep -E "numpy|pandas|scikit-learn|jupyter"
+
+import numpy as np
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+print("numpy:", np.__version__)
+print("pandas:", pd.__version__)
+X = np.array([[1],[2],[3],[4]])
+y = np.array([2,4,6,8])
+model = LinearRegression().fit(X, y)
+print("coef:",model.coef_,"intercept:",model.intercept_)
+
+open the terminal in jupyter notebook and go to the folder you created which is (cd project)
+
+git init
+git add requirements.txt
+git add ml_setup.ipynb
+git commit -m "Add ML environment"
+git remote add origin git@github.com:PrithvirajMarali/studentportal.git
+git branch -M main
+git push -u origin main
+
+[[git pull origin main --rebase]]
