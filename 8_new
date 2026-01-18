@@ -1,0 +1,29 @@
+mkdir ml
+cd ml
+sudo apt install python3-venv
+python3 -m venv myenv
+source myenv/bin/activate
+gedit requirements.txt
+
+numpy>=1.22
+pandas>=1.5
+jupyterlab>=4.1
+notebook>=6.5
+ipykernel
+
+pip install -r requirements.txt
+jupyter lab
+
+import sys
+print(sys.version)
+import numpy as np
+import pandas as pd
+print(np.__version__)
+print(pd.__version__)
+
+git init
+git add .
+git commit -m "change"
+git branch -M main
+git remote add origin (paste the link of repo)
+git push origin main
